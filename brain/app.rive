@@ -1,0 +1,15 @@
+! version = 2.0
+
+// Substitution
+! sub users = user
+! sub registered = register
+
+// Triggers
++ how many user register today
+- <call>subUserRegisterToday</call>
+
++ block user #
+- <call>subBlockUser <star></call>
+
++ *
+- Sorry, I don't know what you say!

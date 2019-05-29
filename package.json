@@ -1,0 +1,29 @@
+{
+  "name": "slack-app-backend-admin",
+  "version": "1.0.0",
+  "description": "An intelligent Slack bot to simplify website administration",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "initdb": "node initdb.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonho288/slack-app-backend-admin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simonho288/slack-app-backend-admin/issues"
+  },
+  "homepage": "https://github.com/simonho288/slack-app-backend-admin#readme",
+  "dependencies": {
+    "@slack/web-api": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.0",
+    "mongodb": "^3.2.6",
+    "rivescript": "^2.0.0"
+  }
+}
