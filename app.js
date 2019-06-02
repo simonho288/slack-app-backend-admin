@@ -6,8 +6,9 @@ const { WebClient } = require('@slack/web-api');
 const MongoClient = require('mongodb').MongoClient;
 const mongoUrl = 'mongodb://localhost:27017/mydb';
 
+const CONFIG = require('./config.json')
 const RsHandler = require('./rivescripthandlers');
-const slackWeb = new WebClient('xoxb-57147027207-648543297126-hkDRZ42HdrWOdrrUEzrA4trP');
+const slackWeb = new WebClient(CONFIG.Slack.BotUserOAuthToken);
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
