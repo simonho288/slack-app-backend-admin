@@ -87,9 +87,11 @@ app.post('/slack/events', async (req, res) => {
     res.setHeader('content-type', 'application/json')
     res.status(200).json({ challenge: payload.challenge })
   } else if (payload.event && payload.event.type === 'app_mention') {
+    console.log(payload.event);
     if (payload.event.subtype !== 'bot_message') {
       await HandleSlackEvents(req, res);
     }
+    res.status(200).end();
   }
 });
 
@@ -108,6 +110,7 @@ app.post('/slack/actions', async (req, res) => {
         HandleSlackAction(req, res, payload, action);
       }
     }
+    res.status(200).end();
   }
 });
 
