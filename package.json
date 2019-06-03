@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app",
-    "initdb": "node initdb.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "initdb": "node initdb.js"
   },
   "repository": {
     "type": "git",

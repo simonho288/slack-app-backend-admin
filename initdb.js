@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const mongoUrl = 'mongodb://localhost:27017/mydb';
+const mongoUrl = 'mongodb://localhost:27017/demo';
 
 async function main() {
   let dbc = await MongoClient.connect(mongoUrl, { useNewUrlParser: true });
