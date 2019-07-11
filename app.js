@@ -32,13 +32,13 @@ async function HandleSlackEvents(req, res) {
   if (reply.substring(0, 9) === '{"blocks"') {
     let json = JSON.parse(reply)
     // Send the blocks to the channel
-    slackWeb.chat.postMessage({
+    await slackWeb.chat.postMessage({
       channel: payload.event.channel,
       blocks: json.blocks
     })
   } else {
     // Send reply message to the channel
-    slackWeb.chat.postMessage({
+    await slackWeb.chat.postMessage({
       channel: payload.event.channel,
       text: user + ' ' + reply
     })
@@ -72,7 +72,7 @@ async function HandleSlackAction(req, res, payload, action) {
 
   // Build the response message and send back to Slack
   let user = '<@' + payload.user.id + '>'
-  slackWeb.chat.postMessage({
+  await slackWeb.chat.postMessage({
     channel: payload.channel.id,
     type: 'mrkdwn',
     text: user + ' ' + returnMsg
@@ -107,7 +107,7 @@ app.post('/slack/actions', async (req, res) => {
     if (payload.type && payload.type === 'block_actions' ) {
       for (let i = 0; i < payload.actions.length; ++i) {
         let action = payload.actions[i];
-        HandleSlackAction(req, res, payload, action);
+        await HandleSlackAction(req, res, payload, action);
       }
     }
     res.status(200).end();
