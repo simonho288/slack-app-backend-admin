@@ -20,8 +20,8 @@
   "homepage": "https://github.com/simonho288/slack-app-backend-admin#readme",
   "dependencies": {
     "@slack/web-api": "^5.0.1",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "mongodb": "^3.2.6",
     "rivescript": "^2.0.0"
   }
